@@ -1,8 +1,10 @@
 import { Flashcard, FlashcardArray } from "react-quizlet-flashcard";
+import { useNavigate } from "react-router-dom"
 export default function Set({ dSet }) {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center">
-      <h1 className="bold"> {dSet.name} </h1>
+      <h1 className="bold" onClick={()=> navigate(`/sets/${dSet.name}`)}> {dSet.name} </h1>
       <FlashcardArray
         cards={dSet.cards}
         frontContentStyle={{

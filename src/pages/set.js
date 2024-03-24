@@ -11,7 +11,7 @@ import {
 import { Flashcard, FlashcardArray } from "react-quizlet-flashcard";
 import { Button } from "@mui/material"
 import { useEffect, useState } from "react";
-import { testFlashcard } from "../utils/functions/flashcard";
+import { testFlashcard,deleteSet } from "../utils/functions/flashcard";
 
 export default function Set(){
   const { id } = useParams();
@@ -33,9 +33,15 @@ export default function Set(){
           justifyContent: "center",
           alignItems: "center",
         }}
+        backContentStyle={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       />
       <Button onClick={()=> setShowForm(true)}> Add a flashcard</Button>
       <Button onClick={()=>testFlashcard(dSet.id)}> Test Flashcard</Button>
+      <Button onClick={()=>deleteSet(dSet.id)} className="bg-red-800"> Delete Set</Button>
     </div> 
     )
   }
