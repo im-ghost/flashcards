@@ -6,7 +6,7 @@ import React from "react"
 import { useEffect } from "react";
 const Home = () => {
   useEffect(()=>{
-    console.log(sets)
+   // console.log(sets)
   },[])
   return (
     <div className="p-2">

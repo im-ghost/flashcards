@@ -2,7 +2,8 @@ import {
   sets
 } from "../app/store";
 import {
-  useParams
+  useParams,
+  useNavigate
 } from "react-router-dom";
 import Form from "../components/form"
 import {
@@ -15,11 +16,12 @@ import { testFlashcards,deleteSet } from "../utils/functions/flashcard";
 
 export default function Set(){
   const { id } = useParams();
+  const navigate = useNavigate();
   const dSet = find(sets,{ name: id});
   const [showForm,setShowForm] = useState(false)
   useEffect(()=>{
     
-    console.log(dSet);
+  //  console.log(dSet);
   },[dSet,sets])
   if(dSet){
   return(
@@ -30,7 +32,7 @@ export default function Set(){
         cards={dSet.cards}
       />
       <Button onClick={()=> setShowForm(true)}> Add a flashcard</Button>
-      <Button onClick={()=>testFlashcards(dSet.id)}> Test Flashcard</Button>
+      <Button onClick={()=>navigate(`/tests/${dSet.name}`)}> Test Flashcard</Button>
       <Button onClick={()=>deleteSet(dSet.id)} className="bg-red-800"> Delete Set</Button>
     </div> 
     )

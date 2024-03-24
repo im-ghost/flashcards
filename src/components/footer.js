@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 w-full bg-gray-800 text-white px-4 py-8 flex justify-between items-center">
+    <footer className="fixed bottom-0 w-full bg-gray-800 text-white px-4 py-8 flex justify-between items-center mt-8 h-[5vh]">
       <nav>
         <ul className="flex space-x-4">
           <li>
@@ -17,7 +17,6 @@ const Footer = () => {
           </li>
         </ul>
       </nav>
-      <span className="text-sm">© 2024 Ghost</span>
     </footer>
   );
 };

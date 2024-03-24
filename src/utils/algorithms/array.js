@@ -1,12 +1,14 @@
 import { shuffle } from "lodash";
 
-const shuffleArray = (array) => {
+export const shuffleArray = (array) => {
   const shuffled = shuffle(array);
   return shuffled;
 };
 
-const options = (questionFlashcard, flashcards) => {
+export const options = (questionFlashcard, flashcards) => {
   const shuffled = shuffleArray(flashcards);
-  const options = [questionFlashcard.answer, ...shuffled.splice(0, 6)];
+  const ans = [];
+  shuffled.map(shuf=> ans.push(shuf.ans))
+  const options = [questionFlashcard.answer, ...ans.splice(0, 6)];
   return options;
 };

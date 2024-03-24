@@ -1,19 +1,22 @@
 import { shuffleArray , options } from "./array"
 
 
-const getQuestions = async (dSet) => {
+export const getQuestions = (dSet) => {
   const { name ,cards } = dSet;
   const shuffledCards = shuffleArray(cards);
+  
   const questions = [];
-  await shuffledCards.map((card)=>{
-    const question = card.question;
+   shuffledCards.map((card)=>{
+    
+    const question = card.ques;
     const dOptions = options(card,cards);
     const eachQues = {
       ques: question,
-      options: dOptions
+      options: dOptions,
+      correctAnswer: card.ans
     }
     questions.push(eachQues);
   });
-  console.log(questions);
+  //console.log(questions);
   return questions;
 }
