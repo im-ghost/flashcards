@@ -12,3 +12,8 @@ export const deleteSet = (setId) =>{
   const newSets = sets.filter(datSet=> datSet.name !== dSet.name);
   localStorage.setItems("flashcards",newSets)
 }
+export const deleteFlashcarf = (setId,flashcardId) =>{
+  const dSet = find(sets,{ name: setId});
+  const newSets = sets.filter(datSet=> datSet.name !== dSet.name);
+  localStorage.setItems("flashcards",newSets)
+}

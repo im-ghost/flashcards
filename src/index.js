@@ -1,10 +1,11 @@
 import React from "react";
+import { s } from "./app/store"
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-
+s()
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

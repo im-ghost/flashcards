@@ -7,9 +7,9 @@ import {
 } from "../../app/store";
 
 class Card {
-  constructor(frontHTML, backHTML) {
-    this.frontHTML = frontHTML;
-    this.backHTML = backHTML;
+  constructor(ques, ans,setId) {
+    this.ques = ques;
+    this.ans = ans;
     this.id = Math.floor(Math.random() * 26637384983);
   }
 }
@@ -26,5 +26,5 @@ if (index !== -1) {
 } else {
   console.log("Object with id", setId, "not found in the array");
 }
-localStorage.setItem("flashcards",sets)
+localStorage.setItem("flashcards",JSON.stringify(sets))
 }
