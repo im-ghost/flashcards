@@ -1,28 +1,27 @@
-
- const cards = [
+const cards = [
   {
     id: 1,
-    ques:  `hi`,
+    ques: `hi`,
     ans: "hello",
   },
   {
     id: 2,
-    ques:  `hi`,
+    ques: `hi`,
     ans: "hello",
   },
   {
     id: 3,
-    ques:  `hi`,
+    ques: `hi`,
     ans: "hello",
   },
   {
     id: 4,
-    ques:  `hi`,
+    ques: `hi`,
     ans: "hello",
   },
   {
     id: 5,
-    ques:  `hi`,
+    ques: `hi`,
     ans: "hello",
   },
 ];
@@ -50,10 +49,9 @@ const setss = [
   },
 ];
 
-
-export const s =() => {
-    localStorage.setItem("flashcards",JSON.stringify(setss))
-  const store =JSON.parse(localStorage.getItem("flashcards"));
+export const s = () => {
+  localStorage.setItem("flashcards", JSON.stringify(setss));
+  const store = JSON.parse(localStorage.getItem("flashcards"));
   return store;
-}
+};
 export const sets = s();

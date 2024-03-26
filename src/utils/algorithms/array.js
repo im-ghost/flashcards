@@ -8,7 +8,7 @@ export const shuffleArray = (array) => {
 export const options = (questionFlashcard, flashcards) => {
   const shuffled = shuffleArray(flashcards);
   const ans = [];
-  shuffled.map(shuf=> ans.push(shuf.ans))
+  shuffled.map((shuf) => ans.push(shuf.ans));
   const options = [questionFlashcard.answer, ...ans.splice(0, 6)];
   return options;
 };
